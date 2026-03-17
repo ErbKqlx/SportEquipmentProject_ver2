@@ -117,8 +117,7 @@ namespace SportEquipmentProject
             // pbLogo
             // 
             pbLogo.Anchor = AnchorStyles.None;
-            pbLogo.BackColor = Color.White;
-            pbLogo.BackgroundImage = Properties.Resources.Sports_Line_Logo_Vector;
+            pbLogo.Image = Properties.Resources.Sports_Line_Logo_Vector;
             pbLogo.Location = new Point(142, 12);
             pbLogo.Name = "pbLogo";
             pbLogo.Size = new Size(100, 100);

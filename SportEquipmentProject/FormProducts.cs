@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SportEquipmentProject.Models;
+using SportEquipmentProject.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -84,7 +85,7 @@ namespace SportEquipmentProject
                         int rowIndex = dgvProducts.Rows.Add();
                         var row = dgvProducts.Rows[rowIndex];
 
-                        //row.Cells["colPhoto"].Value = LoadProductImage(product.PhotoUrl);
+                        row.Cells["colPhoto"].Value = Resources.picture;
 
                         row.Cells["colInfo"].Value = FormatProductInfo(product);
 
@@ -105,6 +106,11 @@ namespace SportEquipmentProject
             }
         }
 
+        //private object LoadProductImage(object photoUrl)
+        //{
+        //    //throw new NotImplementedException();
+        //}
+
         private string FormatProductInfo(Product product)
         {
             string priceText;
@@ -119,7 +125,15 @@ namespace SportEquipmentProject
                 priceText = $"Цена: {product.Price:C}";
             }
 
-            return $"";
+
+            return $"{product.IdProductCategoryNavigation.CategoryName} | {product.ProductName} " + Environment.NewLine +
+                 $"Описание товара: {product.Description}" + Environment.NewLine +
+                 $"Производитель: {product.IdManufacturerNavigation.ManufacturerName}" + Environment.NewLine +
+                 $"Поставщик: {product.IdSupplierNavigation.SupplierName}" + Environment.NewLine +
+                 $"Цена: {priceText}" + Environment.NewLine +
+                 $"Единица измерения: {product.IdUnitOfMeasurementNavigation.UnitName}" + Environment.NewLine +
+                 $"Количество на складе: {product.Count}" + Environment.NewLine;
+                
         }
 
         private void ApplyRowStyles(DataGridViewRow row, Product product)
@@ -134,15 +148,6 @@ namespace SportEquipmentProject
             {
                 row.DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#E9F5FF");
             }
-
-            //if (product.Discount > 0)
-            //{
-            //    row.Cells["colDiscount"].Style.ForeColor = Color.Red;
-            //    row.Cells["colDiscount"].Style.Font = new Font(
-            //        "Times New Roman",
-            //        12,
-            //        FontStyle.Bold);
-            //}
         }
 
         private void BtnLogout_Click(object sender, EventArgs e)

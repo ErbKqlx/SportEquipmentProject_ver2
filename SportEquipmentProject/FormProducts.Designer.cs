@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProducts));
             flowLayoutPanelTop = new FlowLayoutPanel();
             btnLogout = new Button();
             lblUsername = new Label();
             flowLayoutPanelButtons = new FlowLayoutPanel();
             btnGetOrders = new Button();
-            dgvProducts = new DataGridView();
-            panelTop = new Panel();
             btnAdd = new Button();
             btnEdit = new Button();
             btnDelete = new Button();
+            dgvProducts = new DataGridView();
+            panelTop = new Panel();
             flowLayoutPanelTop.SuspendLayout();
             flowLayoutPanelButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
@@ -105,40 +106,6 @@
             btnGetOrders.UseVisualStyleBackColor = false;
             btnGetOrders.Click += BtnGetOrders_Click;
             // 
-            // dgvProducts
-            // 
-            dgvProducts.BackgroundColor = Color.FromArgb(248, 249, 250);
-            dgvProducts.BorderStyle = BorderStyle.None;
-            dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProducts.ColumnHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(67, 97, 238);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvProducts.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvProducts.Location = new Point(10, 75);
-            dgvProducts.MultiSelect = false;
-            dgvProducts.Name = "dgvProducts";
-            dgvProducts.ReadOnly = true;
-            dgvProducts.RowHeadersVisible = false;
-            dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProducts.Size = new Size(1164, 676);
-            dgvProducts.TabIndex = 1;
-            // 
-            // panelTop
-            // 
-            panelTop.BackColor = Color.FromArgb(233, 245, 255);
-            panelTop.Controls.Add(flowLayoutPanelTop);
-            panelTop.Controls.Add(flowLayoutPanelButtons);
-            panelTop.Dock = DockStyle.Top;
-            panelTop.Location = new Point(10, 10);
-            panelTop.Name = "panelTop";
-            panelTop.Size = new Size(1164, 65);
-            panelTop.TabIndex = 3;
-            // 
             // btnAdd
             // 
             btnAdd.BackColor = Color.FromArgb(67, 97, 238);
@@ -175,15 +142,54 @@
             btnDelete.Text = "Удалить";
             btnDelete.UseVisualStyleBackColor = false;
             // 
+            // dgvProducts
+            // 
+            dgvProducts.AllowUserToAddRows = false;
+            dgvProducts.AllowUserToDeleteRows = false;
+            dgvProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvProducts.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvProducts.BackgroundColor = Color.FromArgb(248, 249, 250);
+            dgvProducts.BorderStyle = BorderStyle.None;
+            dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProducts.ColumnHeadersVisible = false;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(67, 97, 238);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvProducts.DefaultCellStyle = dataGridViewCellStyle1;
+            dgvProducts.Location = new Point(10, 75);
+            dgvProducts.MultiSelect = false;
+            dgvProducts.Name = "dgvProducts";
+            dgvProducts.ReadOnly = true;
+            dgvProducts.RowHeadersVisible = false;
+            dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProducts.Size = new Size(1164, 676);
+            dgvProducts.TabIndex = 1;
+            // 
+            // panelTop
+            // 
+            panelTop.BackColor = Color.FromArgb(233, 245, 255);
+            panelTop.Controls.Add(flowLayoutPanelTop);
+            panelTop.Controls.Add(flowLayoutPanelButtons);
+            panelTop.Dock = DockStyle.Top;
+            panelTop.Location = new Point(10, 10);
+            panelTop.Name = "panelTop";
+            panelTop.Size = new Size(1164, 65);
+            panelTop.TabIndex = 3;
+            // 
             // FormProducts
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(248, 249, 250);
-            ClientSize = new Size(1184, 761);
+            ClientSize = new Size(1184, 749);
             Controls.Add(panelTop);
             Controls.Add(dgvProducts);
             Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
             Name = "FormProducts";
             Padding = new Padding(10);

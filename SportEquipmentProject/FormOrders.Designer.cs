@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOrders));
             panelTop = new Panel();
             flowLayoutPanelTop = new FlowLayoutPanel();
             btnLogout = new Button();
@@ -98,6 +99,7 @@
             ClientSize = new Size(1143, 630);
             Controls.Add(panelTop);
             Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
             Name = "FormOrders";
             Padding = new Padding(10);
